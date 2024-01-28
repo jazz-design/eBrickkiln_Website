@@ -17,13 +17,58 @@
 
 
     // Sticky Navbar
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 45) {
-            $('.navbar').addClass('sticky-top shadow-sm');
-        } else {
-            $('.navbar').removeClass('sticky-top shadow-sm');
+    // $(window).scroll(function () {
+    //     if ($(this).scrollTop() > 45) {
+    //         $('.navbar').addClass('sticky-top shadow-sm');
+    //     } else {
+    //         $('.navbar').removeClass('sticky-top shadow-sm');
+    //     }
+    // });
+
+    
+
+    // $(window).scroll(function () {
+    //     if ($(this).scrollTop() > 45) {
+    //         $('.navbar').addClass('sticky-top shadow-sm');
+    //         $('.navbar-brand img').attr('src', 'img/ebrickklin_black_logo.png');
+    //     } else {
+    //         $('.navbar').removeClass('sticky-top shadow-sm');
+    //         $('.navbar-brand img').attr('src', 'img/ebrickklin_white_logo.png');
+    //     }
+    // });
+    
+    // // Optional: You can also trigger the scroll event on page load to apply the initial state.
+    // $(window).trigger('scroll');
+    
+
+    // $
+
+    $(document).ready(function () {
+
+        // Function to update navbar styles
+        function updateNavbarStyles() {
+            let isMobile = $(window).width() < 990;
+            let scrollTop = $(window).scrollTop();
+    
+            if (isMobile || scrollTop > 45) {
+                $('.navbar').addClass('sticky-top shadow-sm');
+                $('.navbar-brand img').attr('src', 'img/logo.svg');
+            } else {
+                $('.navbar').removeClass('sticky-top shadow-sm');
+                $('.navbar-brand img').attr('src', 'img/logo1.svg');
+            }
         }
+    
+        // Call the function on scroll and resize events
+        $(window).on('scroll resize', function () {
+            updateNavbarStyles();
+        });
+    
+        // Initial styles
+        updateNavbarStyles();
+    
     });
+    
     
     // Dropdown on mouse hover
     const $dropdown = $(".dropdown");
@@ -33,6 +78,7 @@
     
     $(window).on("load resize", function() {
         if (this.matchMedia("(min-width: 992px)").matches) {
+
             $dropdown.hover(
             function() {
                 const $this = $(this);
