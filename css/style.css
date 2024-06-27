@@ -496,6 +496,16 @@ h6,
     background: linear-gradient(rgba(135, 30, 17, .7), rgba(135, 30, 17, .7)), url("../img/qoute_header.jpg") center center no-repeat;
     background-size: cover;
 }
+.bg-header_about{
+    background: linear-gradient(rgba(135, 30, 17, .7), rgba(135, 30, 17, .7)), url("../img/about_header.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+.bg-header_cloud{
+    background: linear-gradient(rgba(135, 30, 17, .7), rgba(135, 30, 17, .7)), url("../img/cloud_header.jpg") center center no-repeat;
+    background-size: cover;
+}
+
 .link-animated a {
     transition: .5s;
 }
